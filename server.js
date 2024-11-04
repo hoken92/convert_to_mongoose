@@ -8,8 +8,8 @@ const app = express();
 await mongoose.connect(process.env.ATLAS_URI);
 console.log("Connected to Mongo!");
 
-import grades from "./routes/grades.mjs";
-import grades_agg from "./routes/grades_agg.mjs";
+import grades from "./routes/grades.js";
+import grades_agg from "./routes/grades_agg.js";
 
 app.use(express.json());
 
