@@ -1,16 +1,19 @@
-import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
 
-const gradeSchema = new Schema({
-  learner_id: {
-    type: Number,
-    required: true,
-    message: "Learner ID field is a required field",
-  },
-  class_id: {
-    type: Number,
-    required: true,
-    message: "Class ID field is a required field",
-  },
+// Mongoose model definition
+const gradeSchema = new mongoose.Schema({
+  learner_id: Number,
+  class_id: Number,
+  scores: [
+    {
+      type: { type: String, enum: ["exam", "homework", "quiz"] },
+      score: Number,
+    },
+  ],
 });
 
-export default model("Grade", gradeSchema);
+// Create the model
+const Grade = mongoose.model("Grade", gradeSchema);
+
+// Export the model
+export default Grade;
