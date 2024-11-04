@@ -1,6 +1,5 @@
 import express from "express";
-import db from "../db/conn.mjs";
-import { ObjectId } from "mongodb";
+import mongoose from "mongoose";
 
 const router = express.Router();
 

@@ -1,6 +1,8 @@
 import express from "express";
+import mongoose from "mongoose";
+import "dotenv/config";
 
-const PORT = 5050;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 await mongoose.connect(process.env.ATLAS_URI);
